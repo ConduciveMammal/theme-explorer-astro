@@ -1,9 +1,10 @@
-$baseFont: 'Lato', sans-serif;
+$baseFont: 'Nunito', sans-serif;
 $codeFont: 'Source Code Pro', monospace;
 $fontSizeSmall: 15px;
 
 body {
 	font-family: $baseFont;
+	font-optical-sizing: auto;
 	font-size: 18px;
 	line-height: 1.65;
 	font-weight: 400;
