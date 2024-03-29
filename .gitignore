@@ -153,4 +153,7 @@ dist
 # Ignore content collection generated files
 .astro
 
+.DS_Store
+
 # End of https://www.toptal.com/developers/gitignore/api/astro
+.vercel

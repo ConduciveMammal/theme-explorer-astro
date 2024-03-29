@@ -3,19 +3,47 @@ import { ViewTransitions } from 'astro:transitions';
 import SEO, { type Props as SEOProps } from './SEO.astro';
 import { SiteTitle, SiteDescription } from '../consts';
 
+
+
 export type Props = Partial<SEOProps>;
 const { title = SiteTitle, name = SiteTitle, description = SiteDescription, ...seo } = Astro.props;
+
+
 ---
+
+<script>
+import mixpanel from 'mixpanel-browser';
+
+mixpanel.init('0adea61c20422997055f5831bb25f037', {debug: true, track_pageview: true, persistence: 'localStorage'});
+</script>
 
 <SEO {title} {description} {name} {...seo} />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
+
+<link rel="preload" href="/fonts/Nunito-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
+
+<!-- <link
 	href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000"
 	rel="stylesheet"
-/>
+/> -->
 
-<link rel="shortcut icon" href="../../public/theme.svg" type="image/x-icon">
 
+<style is:global>
+	@font-face {
+		font-family: 'Nunito';
+		font-style: normal;
+		font-weight: 200 1000;
+		src: url('/fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Nunito';
+		font-style: italic;
+		font-weight: 200 1000;
+		src: url('/fonts/Nunito-Italic-VariableFont_wght.ttf') format('truetype');
+		font-display: swap;
+	}
+
+	</style>
 <ViewTransitions />

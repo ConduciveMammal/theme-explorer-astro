@@ -62,11 +62,17 @@ const twitter = {
 function normalizeImageUrl(image: string | ImageMetadata) {
 	return typeof image === 'string' ? image : image.src;
 }
+
+import favicon from '../assets/images/theme.svg'
 ---
 
 <!-- Page Metadata -->
+
+<title>{title}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="canonical" href={canonicalURL} />
 <meta name="description" content={description} />
+<link rel="shortcut icon" href={favicon.src} type="image/svg+xml">
 
 <!-- OpenGraph Tags -->
 <meta property="og:title" content={og.title} />

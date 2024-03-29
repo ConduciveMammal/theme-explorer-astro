@@ -39,8 +39,8 @@ body {
 		height: 240px;
 		background: radial-gradient(
 			50% 50% at 50% 50%,
-			rgba(color(orange, 500), 0.2) 0%,
-			rgba(color(orange, 500), 0) 100%
+			rgba(color(pink, 500), 0.2) 0%,
+			rgba(color(pink, 500), 0) 100%
 		);
 		@media (prefers-color-scheme: dark) {
 			background: radial-gradient(
@@ -53,22 +53,22 @@ body {
 }
 
 ::selection {
-	background: color(orange, 200);
+	background: color(pink, 200);
 	@media (prefers-color-scheme: dark) {
-		background: color(orange, 600);
+		background: color(pink, 600);
 	}
 }
 
 a,
 a:visited {
-	color: color(orange, 600);
+	color: color(pink, 600);
 	@media (prefers-color-scheme: dark) {
-		color: color(orange, 300);
+		color: color(pink, 300);
 	}
 	transition: 0.1s ease;
 
 	&:hover {
-		color: color(orange, 500);
+		color: color(pink, 500);
 	}
 }
 
@@ -144,7 +144,7 @@ nav {
 				top: 0.63em;
 				width: 8px;
 				height: 8px;
-				background: linear-gradient(25deg, color(purple, 500), color(orange, 500));
+				background: linear-gradient(25deg, color(purple, 500), color(pink, 500));
 				border-radius: 99px;
 			}
 		}
@@ -221,8 +221,8 @@ nav {
 		25deg,
 		color(purple, 800),
 		color(purple, 700),
-		mix(color(purple, 500), color(orange, 500)),
-		color(orange, 500)
+		mix(color(purple, 500), color(pink, 500)),
+		color(pink, 500)
 	);
 	border-radius: 8px;
 }

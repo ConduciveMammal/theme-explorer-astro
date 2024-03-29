@@ -1,55 +1,66 @@
 ---
-import { getCollection } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
-import Layout from '../layouts/IndexLayout.astro';
-import { Image } from 'astro:assets';
-import marqueeBanner from '../assets/images/MarqueeImage.png';
-console.log(marqueeBanner);
-
-const posts = await getCollection('releases');
-posts.sort((a, b) => +b.data.date - +a.data.date);
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import Layout from "../layouts/IndexLayout.astro";
+import { Image } from "astro:assets";
+import promoBanner from "../assets/images/promo-banner.png";
+import chromeBadge from "../assets/images/chrome-badge.svg";
 ---
 
 <Layout>
-	<main>
-		<h1 class="page_title">Changelog</h1>
-		<Image
-			class="hero-banner"
-			src={marqueeBanner}
-			alt=""
-			width={marqueeBanner.width}
-			height={marqueeBanner.height}
-			widths={[240, 540, 720, marqueeBanner.width]}
-			loading="eager"
-			fetchpriority="high" />
-		<hr />
-		<ul class="posts" transition:name="post">
-			{
-				posts.map((post) => (
-					<li class="post">
-						<div class="version_wrapper">
-							<div class="version_info">
-								<a href={`/releases/${post.slug}`}>
-									<div class="version_number">{post.data.versionNumber}</div>
-									<FormattedDate class="date" date={post.data.date} />
-								</a>
-							</div>
-						</div>
-						<div class="content">
-							{post.render().then(({ Content }) => (
-								<Content />
-							))}
-						</div>
-					</li>
-				))
-			}
-		</ul>
-	</main>
+  <main>
+    <h1 class="page_title">Theme Explorer for Shopify</h1>
+    <Image
+      class="hero-banner"
+      src={promoBanner}
+      alt=""
+      width={promoBanner.width}
+      height={promoBanner.height}
+      widths={[240, 540, 720, promoBanner.width]}
+      sizes="(max-width: 768px) 100vw, 1040px"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <hr />
+
+    <section class="intro">
+
+      <a
+        href="https://chromewebstore.google.com/detail/theme-explorer-for-shopif/jiapemkfhgejoifinncjnbdkpafhkcnj"
+        target="_blank"
+        class="intro__badge-link"
+        rel="nofollow noreferer"
+        title="Install now on the Chrome web store"
+      >
+        <Image
+          class="chrome-badge"
+          src={chromeBadge}
+          alt="Download now on Chrome"
+          width={chromeBadge.width}
+          height={chromeBadge.height}
+          widths={[240, 540, 720, chromeBadge.width]}
+          sizes="(max-width: 768px) 100vw, 1040px"
+          loading="lazy"
+        />
+      </a>
+    </section>
+  </main>
 </Layout>
 
 <style>
-	.hero-banner {
-		width: 100%;
-		height: auto;
-	}
+  .hero-banner {
+    width: 100%;
+    height: auto;
+  }
+
+  .intro__badge-link {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .intro__badge-link img {
+    width: 100%;
+    height: auto;
+  }
 </style>
