@@ -37,3 +37,13 @@ posts.sort((a, b) => +b.data.date - +a.data.date);
 		</ul>
 	</main>
 </Layout>
+
+<style is:global>
+	.content video,
+	.content img {
+		max-height: 500px;
+		width: auto;
+		margin: 20px auto;
+		display: block;
+	}
+</style>
