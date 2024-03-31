@@ -1,0 +1,28 @@
+---
+title: 'v1.4.0'
+date: '2024-03-31'
+versionNumber: '1.4.0'
+description: 'Updated for Theme Explorer v1.4.0.'
+image:
+  src: '../../assets/starlog-placeholder-1.jpg'
+  alt: 'The full Astro logo.'
+
+---
+import video from '../../assets/screenshots/theme-search.mp4'
+
+### Fixed
+
+- Storefront component will now output the correct admin URLs
+- Storefront component should now fully work on Shopify CLI-hosted stores
+
+### Added
+
+- Admin component will now mark themes that are still processing.
+
+![Admin component showing a theme is currently processing](../../assets/screenshots/theme-processing.png)
+
+- Added Fuse.js search
+  - Search by theme name, ID, and role.
+  - Search results are weighted, with ID and role given a higher weight.
+
+<video src={video} controls loop muted />

@@ -19,3 +19,13 @@ const { Content } = await release.render();
 <Layout {release}>
 	<Content />
 </Layout>
+
+<style is:global>
+	.content video,
+	.content img {
+		max-height: 500px;
+		width: auto;
+		margin: 20px auto;
+		display: block;
+	}
+</style>
