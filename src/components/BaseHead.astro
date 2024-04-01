@@ -14,7 +14,7 @@ const { title = SiteTitle, name = SiteTitle, description = SiteDescription, ...s
 <script>
 import mixpanel from 'mixpanel-browser';
 
-mixpanel.init('0adea61c20422997055f5831bb25f037', {debug: true, track_pageview: true, persistence: 'localStorage'});
+mixpanel.init('0adea61c20422997055f5831bb25f037', {debug: false, track_pageview: true, persistence: 'localStorage'});
 </script>
 
 <SEO {title} {description} {name} {...seo} />
